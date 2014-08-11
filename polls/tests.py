@@ -36,13 +36,13 @@ class PollViewTests(TestCase):
       create_poll(questions="Past poll.", days=-30)
       create_poll(questions="Future poll.", days=30)
       response=self.client.get(reverse('polls:index'))
-      self.assertQuerysetEqual(response.context['latest_poll_list'], ['<Poll:Past poll.>'])
+      self.assertQuerysetEqual(response.context['latest_poll_list'], ['<Poll: Past poll.>'])
 
    def test_index_view_with_two_past_polls(self):
       create_poll(questions="Past poll 1.", days=-30)
       create_poll(questions="Past poll 2.", days=-5)
       response=self.client.get(reverse('polls:index'))
-      self.assertQuerysetEqual(response.context['latest_poll_list'], ['<Poll:Past poll2.>'] ,['<Poll:Past poll1.>'])
+      self.assertQuerysetEqual(response.context['latest_poll_list'], ['<Poll: Past poll2.>'] ,['<Poll: Past poll1.>'])
 
 class PollIndexDetailTests(TestCase):
     def test_detail_view_with_a_future_poll(self):
@@ -70,6 +70,6 @@ class PollIndexDetailTests(TestCase):
 
    def test_was_published_recently_with_recent_poll(self):
       recent_poll = Poll(pub_date=timezone.now() - datetime.timedelta(hours=1))
-      self.assertEqual(recent_poll.was_published_recently(), True)"""
+      self.assertEqual(recent_poll.was_published_recently(), True)  """
 
 
