@@ -6,11 +6,11 @@ threadsafe: true
 
 handlers:
 - url: /
-  script: home.app
+  script: home.application
 
 - url: /index\.html
-  script: home.app
+  script: home.application
 
 - url: /admin/.*
-  script: admin.app
+  script: admin.application
   login: admin
