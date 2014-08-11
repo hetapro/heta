@@ -12,5 +12,5 @@ handlers:
   script: home.app
 
 - url: /admin/.*
-  script:admin.app
+  script: admin.app
   login: admin
