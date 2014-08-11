@@ -1,4 +1,4 @@
-import datetime
+"""import datetime
 from django.utils import timezone
 from django.test import TestCase
 
@@ -14,7 +14,7 @@ def create_poll(questions, days):
 
 class PollViewTests(TestCase):
    def test_index_view_with_no_poll(self):
-      """If no polls exist, an appropriate message should be displayed."""
+      
       response=self.client.get(reverse('polls:index'))
       self.assertEqual(response.status_code, 200)
       self.assertContains(response, "No polls are available.")
@@ -57,7 +57,7 @@ class PollIndexDetailTests(TestCase):
         response = self.client.get(reverse('polls:detail', args=(past_poll.id,)))
         self.assertContains(response, past_poll.questions, status_code=200)
 
-
+"""
 
 """class PollMethodTests(TestCase):
    def test_was_published_recently_with_future_poll(self):
